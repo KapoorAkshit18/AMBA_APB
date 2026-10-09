@@ -50,7 +50,7 @@ class environment;
     endtask //start()
 
     task stop();
-        wait(sb.TEST_DONE.triggered);
+        @(sb.TEST_DONE);
         $display("TEST COMPLETED");
         sb.print_report;
     endtask //stop()
